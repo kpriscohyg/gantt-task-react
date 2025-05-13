@@ -65,6 +65,7 @@ export const Gantt: React.FunctionComponent<GanttProps> = ({
   onDelete,
   onSelect,
   onExpanderClick,
+  headerLabels
 }) => {
   const wrapperRef = useRef<HTMLDivElement>(null);
   const taskListRef = useRef<HTMLDivElement>(null);
@@ -448,6 +449,7 @@ export const Gantt: React.FunctionComponent<GanttProps> = ({
     onExpanderClick: handleExpanderClick,
     TaskListHeader,
     TaskListTable,
+    headerLabels
   };
   return (
     <div>

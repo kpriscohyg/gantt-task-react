@@ -129,6 +129,13 @@ export interface StylingOption {
       to?: string;
     };
   }>;
+
+  headerLabels?: {
+    name?: string;
+    from?: string;
+    to?: string;
+  };
+
   TaskListTable?: React.FC<{
     rowHeight: number;
     rowWidth: string;
@@ -142,11 +149,6 @@ export interface StylingOption {
      */
     setSelectedTask: (taskId: string) => void;
     onExpanderClick: (task: Task) => void;
-    headerLabels?: {
-      name?: string;
-      from?: string;
-      to?: string;
-    };
   }>;
 }
 

@@ -22,6 +22,11 @@ export type TaskListProps = {
     rowWidth: string;
     fontFamily: string;
     fontSize: string;
+    headerLabels?: {
+      name?: string;
+      from?: string;
+      to?: string;
+    };
   }>;
   TaskListTable: React.FC<{
     rowHeight: number;
@@ -34,6 +39,11 @@ export type TaskListProps = {
     setSelectedTask: (taskId: string) => void;
     onExpanderClick: (task: Task) => void;
   }>;
+  headerLabels?: {
+    name?: string;
+    from?: string;
+    to?: string;
+  };
 };
 
 export const TaskList: React.FC<TaskListProps> = ({
@@ -53,6 +63,7 @@ export const TaskList: React.FC<TaskListProps> = ({
   horizontalContainerClass,
   TaskListHeader,
   TaskListTable,
+  headerLabels = {},
 }) => {
   const horizontalContainerRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
@@ -66,6 +77,7 @@ export const TaskList: React.FC<TaskListProps> = ({
     fontFamily,
     fontSize,
     rowWidth,
+    headerLabels
   };
   const selectedTaskId = selectedTask ? selectedTask.id : "";
   const tableProps = {
