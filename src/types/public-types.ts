@@ -123,6 +123,11 @@ export interface StylingOption {
     rowWidth: string;
     fontFamily: string;
     fontSize: string;
+    headerLabels?: {
+      name?: string;
+      from?: string;
+      to?: string;
+    };
   }>;
   TaskListTable?: React.FC<{
     rowHeight: number;
@@ -137,6 +142,11 @@ export interface StylingOption {
      */
     setSelectedTask: (taskId: string) => void;
     onExpanderClick: (task: Task) => void;
+    headerLabels?: {
+      name?: string;
+      from?: string;
+      to?: string;
+    };
   }>;
 }
 
